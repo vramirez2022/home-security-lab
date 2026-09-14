@@ -18,6 +18,17 @@ A home-lab firewall build that proves three security skills:
 
 ---
 
+## 1. Topology
+![Topology] (topology.png)
+
+- **WAN** = hn0, DHCP from home router (`10.0.0.28`)
+- **LAN** = hn1, `192.168.1.0/24` (trusted)
+- **Guest Net (OPT1)** = hn2, `192.168.2.0/24` (isolated)
+- **WGT (OPT2)** = WireGuard tunnel, `10.10.10.0/24`
+- All on separate Hyper-V virtual switches (segmentation mimicked with vSwitches instead of physical VLANs — same firewall skills)
+
+---
+
 ## 2. What I built and why
 
 Hypothesis-to-prove: `guests can browse the internet but must never reach my lab dev machines, and I want to (a) detect malicious activity and (b) reach my lab securely from my phone.`
