@@ -8,10 +8,8 @@ A home-lab firewall build that proves three security skills:
 ---
 
 ## 1. Topology
-
-![Topology] (toplogy.png)
+![Topology] (topology.png)
 ```
-
 - **WAN** = hn0, DHCP from home router (`10.0.0.28`)
 - **LAN** = hn1, `192.168.1.0/24` (trusted)
 - **Guest Net (OPT1)** = hn2, `192.168.2.0/24` (isolated)
