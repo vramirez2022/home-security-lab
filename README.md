@@ -9,30 +9,7 @@ A home-lab firewall build that proves three security skills:
 
 ## 1. Topology
 
-```mermaid
-flowchart TB
-    INTERNET[Internet / Cellular]
-    ROUTER[Home Router 10.0.0.1]
-    subgraph WAN[WAN 10.0.0.0/24]
-        ROUTER
-    end
-    PFSENSE[pfSense VM ==== the firewall]
-    VPN[VPN Clients<br/>10.10.10.0/24]
-    LAN[LAN 192.168.1.0/24<br/>trusted lab VMs]
-    GUEST[Guest Net 192.168.2.0/24<br/>isolated visitors]
-    BASICS[Windows Host 192.168.1.10]
-    LAB[Lab VMs]
-    PHONE[iPhone over cellular<br/>10.10.10.2]
-
-    INTERNET --- ROUTER --- PFSENSE
-    PFSENSE --- LAN
-    PFSENSE --- GUEST
-    PFSENSE --- VPN
-    LAN --- BASICS
-    LAN --- LAB
-    VPN --- PHONE
-
-    style PFSENSE fill:#d00,color:#fff
+![Topology] (toplogy.png)
 ```
 
 - **WAN** = hn0, DHCP from home router (`10.0.0.28`)
