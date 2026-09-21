@@ -1,0 +1,6 @@
+# Secrets - never commit
+wg-vr-mac.conf
+*.conf
+*.key
+.env
+*.pem
